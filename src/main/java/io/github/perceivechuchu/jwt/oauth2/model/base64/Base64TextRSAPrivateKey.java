@@ -5,7 +5,7 @@ import org.apache.commons.codec.binary.Base64;
 
 public class Base64TextRSAPrivateKey implements TextRSAPrivateKey {
 
-    private String text;
+    private final String text;
 
     public Base64TextRSAPrivateKey(String text){
         this.text = text;
