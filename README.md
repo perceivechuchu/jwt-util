@@ -65,7 +65,7 @@ String publicKeyPlain = "public key in base64 format";
 TextRSAPrivateKey privateKeyPlainObject = new PlainTextRSAPrivateKey(privateKeyPlain);
 TextRSAPublicKey publicKeyPlainObject = new PlainTextRSAPublicKey(publicKeyPlain);
 
-String jwt = JWTSigner.sign(privateKeyPlainObject, publicKeyPlainObject, jwtBuilder);
+String jwt = JWTSigner.sign(jwtBuilder, privateKeyPlainObject, publicKeyPlainObject);
 
 // Output: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ.ewogImlzc..."
 ```
