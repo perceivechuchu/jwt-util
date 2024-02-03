@@ -29,6 +29,13 @@ This library provides the following features:
 
 * **Signing a JWT token with Plain Text Private and Public Keys using RSA256 Algorithm**
 ```
+JWTCreator.Builder jwtBuilder = JWT.create()
+                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
+                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set subject to Oauth Client Id
+                .withAudience("https://your-oauth-url/")
+                .withClaim("jti", UUID.randomUUID().toString())
+                .withExpiresAt(Instant.now().plusSeconds(300));
+                
 String privateKeyPlain = "private key in plain text";
 
 String publicKeyPlain = "public key in plain text";
@@ -36,14 +43,7 @@ String publicKeyPlain = "public key in plain text";
 TextRSAPrivateKey privateKeyPlainObject = new PlainTextRSAPrivateKey(privateKeyPlain);
 TextRSAPublicKey publicKeyPlainObject = new PlainTextRSAPublicKey(publicKeyPlain);
 
-JWTCreator.Builder jwtBuilder = JWT.create()
-                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
-                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set subject to Oauth Client Id
-                .withAudience("https://your-oauth-url/")
-                .withClaim("jti", UUID.randomUUID().toString())
-                .withExpiresAt(Instant.now().plusSeconds(300));
-
-String jwt = JWTSigner.sign(privateKeyPlainObject, publicKeyPlainObject, jwtBuilder);
+String jwt = JWTSigner.sign(jwtBuilder, privateKeyPlainObject, publicKeyPlainObject);
 
 // Output: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ.ewogImlzc..."
 ```
@@ -51,19 +51,19 @@ String jwt = JWTSigner.sign(privateKeyPlainObject, publicKeyPlainObject, jwtBuil
 
 * **Signing a JWT token with Base64 Encoded Private and Public Keys using RSA256 Algorithm**
 ```
+JWTCreator.Builder jwtBuilder = JWT.create()
+                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
+                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set subject to Oauth Client Id
+                .withAudience("https://your-oauth-url/")
+                .withClaim("jti", UUID.randomUUID().toString())
+                .withExpiresAt(Instant.now().plusSeconds(300));
+
 String privateKeyPlain = "private key in base64 format";
 
 String publicKeyPlain = "public key in base64 format";
 
 TextRSAPrivateKey privateKeyPlainObject = new PlainTextRSAPrivateKey(privateKeyPlain);
 TextRSAPublicKey publicKeyPlainObject = new PlainTextRSAPublicKey(publicKeyPlain);
-
-JWTCreator.Builder jwtBuilder = JWT.create()
-.withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
-.withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set subject to Oauth Client Id
-.withAudience("https://your-oauth-url/")
-.withClaim("jti", UUID.randomUUID().toString())
-.withExpiresAt(Instant.now().plusSeconds(300));
 
 String jwt = JWTSigner.sign(privateKeyPlainObject, publicKeyPlainObject, jwtBuilder);
 
