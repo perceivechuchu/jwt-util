@@ -1,4 +1,4 @@
-date-time-util
+jwt-util
 ==============
 
 [![Build Status](https://github.com/perceivechuchu/jwt-util/actions/workflows/maven.yml/badge.svg)](https://github.com/perceivechuchu/jwt-util/actions/workflows/maven.yml)
