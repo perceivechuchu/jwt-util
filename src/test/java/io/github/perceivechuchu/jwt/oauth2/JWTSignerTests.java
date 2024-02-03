@@ -105,7 +105,7 @@ class JWTSignerTests {
         JWTCreator.Builder jwtBuilder = JWT.create()
                 .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to client ID
                 .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set subject to client ID
-                .withAudience("https://your-oauth-url/")
+                .withAudience("https://your-oauth-token-endpoint")
                 .withClaim("jti", UUID.randomUUID().toString())
                 .withExpiresAt(Instant.now().plusSeconds(300));
 
