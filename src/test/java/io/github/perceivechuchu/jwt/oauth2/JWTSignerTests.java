@@ -64,8 +64,8 @@ class JWTSignerTests {
         TextRSAPublicKey publicKeyBase64Object = new Base64TextRSAPublicKey(publicKeyBase64);
 
         JWTCreator.Builder jwtBuilder = JWT.create()
-                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to client ID
-                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set subject to client ID
+                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
+                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
                 .withAudience("https://your-oauth-url/")
                 .withClaim("jti", UUID.randomUUID().toString())
                 .withExpiresAt(Instant.now().plusSeconds(300));
@@ -83,8 +83,8 @@ class JWTSignerTests {
         TextRSAPublicKey publicKeyBase64Object = new Base64TextRSAPublicKey(publicKeyBase64);
 
         JWTCreator.Builder jwtBuilder = JWT.create()
-                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to client ID
-                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set subject to client ID
+                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
+                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
                 .withAudience("https://your-oauth-url/")
                 .withClaim("jti", UUID.randomUUID().toString())
                 .withExpiresAt(Instant.now().plusSeconds(300));
@@ -103,8 +103,8 @@ class JWTSignerTests {
         TextRSAPublicKey publicKeyBase64Object = new Base64TextRSAPublicKey(publicKeyBase64);
 
         JWTCreator.Builder jwtBuilder = JWT.create()
-                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to client ID
-                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set subject to client ID
+                .withIssuer("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
+                .withSubject("f1faabb6-1d3f-4b46-acd7-eb408340d4f0") // Set issuer to OAuth Client Id
                 .withAudience("https://your-oauth-token-endpoint")
                 .withClaim("jti", UUID.randomUUID().toString())
                 .withExpiresAt(Instant.now().plusSeconds(300));
