@@ -39,8 +39,8 @@ public class JWTSigner {
      */
     public static String sign(TextRSAPrivateKey privateKeyTextObject, TextRSAPublicKey publicKeyTextObject, JWTCreator.Builder jwtBuilder) throws JWTSignerException {
         try {
-            RSAPrivateKey rsaPrivateKey = convertToRSAPrivateKey(privateKeyTextObject.getText());
-            RSAPublicKey rsaPublicKey = convertToRSAPublicKey(publicKeyTextObject.getText());
+            RSAPrivateKey rsaPrivateKey = convertToRSAPrivateKey(privateKeyTextObject.getPlainText());
+            RSAPublicKey rsaPublicKey = convertToRSAPublicKey(publicKeyTextObject.getPlainText());
             Algorithm algorithm = Algorithm.RSA256(rsaPublicKey, rsaPrivateKey);
             // Sign the JWT with the private key using RSA256 Algorithm
             return jwtBuilder.sign(algorithm);
