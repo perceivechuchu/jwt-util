@@ -4,7 +4,7 @@ jwt-util
 [![Build Status](https://github.com/perceivechuchu/jwt-util/actions/workflows/maven.yml/badge.svg)](https://github.com/perceivechuchu/jwt-util/actions/workflows/maven.yml)
 [![Jacoco Coverage](/.github/badges/jacoco.svg)](/.github/badges/jacoco.svg)
 
-jwt-util a utility library that provides functionality to deal with jwt tokens; jwt signing etc.
+jwt-util is a utility library that provides functionality to deal with jwt tokens such as jwt signing.
 
 Installation
 ============

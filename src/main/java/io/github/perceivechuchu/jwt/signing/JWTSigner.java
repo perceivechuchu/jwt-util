@@ -28,13 +28,13 @@ public class JWTSigner {
     }
 
     /**
-     * Signs a JWT token with Private and Public Keys using RSA256 Algorithm
+     * Signs a JWT with Private and Public Keys using RSA256 Algorithm
      *
      * @param privateKeyTextObject the RSA private key object that holds private key information in textual format e.g. plain text private key
      * @param publicKeyTextObject the RSA public key object that holds public key information in textual format e.g. plain text public key
-     * @param jwtBuilder the builder for the JWT token that also contains the details of the JWT token to be signed
-     * @return the string value of signed jwt token
-     * @throws JWTSignerException    if the signing of jwt token fails
+     * @param jwtBuilder the builder for the JWT that also contains the details of the JWT to be signed
+     * @return the string value of signed jwt
+     * @throws JWTSignerException    if the signing of jwt fails
      * @since 1.0.0
      */
     public static String sign(TextRSAPrivateKey privateKeyTextObject, TextRSAPublicKey publicKeyTextObject, JWTCreator.Builder jwtBuilder) throws JWTSignerException {
