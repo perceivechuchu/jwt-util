@@ -1,6 +1,6 @@
-package io.github.perceivechuchu.jwt.oauth2.model.base64;
+package io.github.perceivechuchu.jwt.signing.model.base64;
 
-import io.github.perceivechuchu.jwt.oauth2.model.TextRSAPublicKey;
+import io.github.perceivechuchu.jwt.signing.model.TextRSAPublicKey;
 import org.apache.commons.codec.binary.Base64;
 
 public class Base64TextRSAPublicKey implements TextRSAPublicKey {

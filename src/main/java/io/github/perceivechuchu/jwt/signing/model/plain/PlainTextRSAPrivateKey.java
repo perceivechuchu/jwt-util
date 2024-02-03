@@ -1,6 +1,6 @@
-package io.github.perceivechuchu.jwt.oauth2.model.plain;
+package io.github.perceivechuchu.jwt.signing.model.plain;
 
-import io.github.perceivechuchu.jwt.oauth2.model.TextRSAPrivateKey;
+import io.github.perceivechuchu.jwt.signing.model.TextRSAPrivateKey;
 
 public class PlainTextRSAPrivateKey implements TextRSAPrivateKey {
 

@@ -1,4 +1,4 @@
-package io.github.perceivechuchu.jwt.oauth2.model;
+package io.github.perceivechuchu.jwt.signing.model;
 
 public interface TextRSAPublicKey {
 

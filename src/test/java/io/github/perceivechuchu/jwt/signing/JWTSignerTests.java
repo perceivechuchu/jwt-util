@@ -1,14 +1,14 @@
-package io.github.perceivechuchu.jwt.oauth2;
+package io.github.perceivechuchu.jwt.signing;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;
-import io.github.perceivechuchu.jwt.oauth2.exception.JWTSignerException;
-import io.github.perceivechuchu.jwt.oauth2.model.TextRSAPrivateKey;
-import io.github.perceivechuchu.jwt.oauth2.model.TextRSAPublicKey;
-import io.github.perceivechuchu.jwt.oauth2.model.base64.Base64TextRSAPrivateKey;
-import io.github.perceivechuchu.jwt.oauth2.model.base64.Base64TextRSAPublicKey;
-import io.github.perceivechuchu.jwt.oauth2.model.plain.PlainTextRSAPrivateKey;
-import io.github.perceivechuchu.jwt.oauth2.model.plain.PlainTextRSAPublicKey;
+import io.github.perceivechuchu.jwt.signing.exception.JWTSignerException;
+import io.github.perceivechuchu.jwt.signing.model.TextRSAPrivateKey;
+import io.github.perceivechuchu.jwt.signing.model.TextRSAPublicKey;
+import io.github.perceivechuchu.jwt.signing.model.base64.Base64TextRSAPrivateKey;
+import io.github.perceivechuchu.jwt.signing.model.base64.Base64TextRSAPublicKey;
+import io.github.perceivechuchu.jwt.signing.model.plain.PlainTextRSAPrivateKey;
+import io.github.perceivechuchu.jwt.signing.model.plain.PlainTextRSAPublicKey;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;

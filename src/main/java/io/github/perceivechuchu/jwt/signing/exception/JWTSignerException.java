@@ -1,4 +1,4 @@
-package io.github.perceivechuchu.jwt.oauth2.exception;
+package io.github.perceivechuchu.jwt.signing.exception;
 
 import lombok.Builder;
 import lombok.Data;

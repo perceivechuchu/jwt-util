@@ -27,7 +27,7 @@ This library provides the following features:
 ## 1. JWTSigner 
 <br />
 
-* **Signing a JWT token with Plain Text Private and Public Keys (RSA256 Algorithm)**
+* **Signing a JWT token with Plain Text Private and Public Keys using RSA256 Algorithm**
 ```
 String privateKeyPlain = "private key in plain text";
 
@@ -49,7 +49,7 @@ String jwt = JWTSigner.sign(privateKeyPlainObject, publicKeyPlainObject, jwtBuil
 ```
 <br />
 
-* **Signing a JWT token with Base64 Encoded Private and Public Keys (RSA256 Algorithm)**
+* **Signing a JWT token with Base64 Encoded Private and Public Keys using RSA256 Algorithm**
 ```
 String privateKeyPlain = "private key in base64 format";
 
