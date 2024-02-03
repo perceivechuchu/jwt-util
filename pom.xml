@@ -8,7 +8,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>A utility library that provides functionality to deal with jwt tokens such as jwt signing.</description>
+    <description>A utility library that provides functionality to deal with JWT such as JWT signing.</description>
     <url>https://github.com/perceivechuchu/jwt-util</url>
 
     <licenses>
