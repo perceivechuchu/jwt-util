@@ -25,6 +25,7 @@ class JWTSignerTests {
 
     @Test
     void sign_ReturnSignedJWT_WhenAllPlainTextParametersAreValid() throws JWTSignerException {
+        // NB: This a fake private key. It is just for the purpose of testing
         String plainPrivateKey = "-----BEGIN PRIVATE KEY-----\n" +
                 "MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAqPfgaTEWEP3S9w0t\n" +
                 "gsicURfo+nLW09/0KfOPinhYZ4ouzU+3xC4pSlEp8Ut9FgL0AgqNslNaK34Kq+NZ\n" +
@@ -36,6 +37,7 @@ class JWTSignerTests {
                 "BVl433tgTTQ=\n" +
                 "-----END PRIVATE KEY-----";
 
+        // NB: This a fake public key. It is just for the purpose of testing
         String plainPublicKey = "-----BEGIN RSA PUBLIC KEY-----\n" +
                 "MEgCQQCo9+BpMRYQ/dL3DS2CyJxRF+j6ctbT3/Qp84+KeFhnii7NT7fELilKUSnx\n" +
                 "S30WAvQCCo2yU1orfgqr41mM70MBAgMBAAE=\n" +
@@ -56,8 +58,9 @@ class JWTSignerTests {
 
     @Test
     void sign_ReturnSignedJWT_WhenAllBase64TextParametersAreValid() throws JWTSignerException {
+        // NB: This a fake base64 private key. It is just for the purpose of testing
         String privateKeyBase64 = "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUJWQUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQVQ0d2dnRTZBZ0VBQWtFQXFQZmdhVEVXRVAzUzl3MHQKZ3NpY1VSZm8rbkxXMDkvMEtmT1BpbmhZWjRvdXpVKzN4QzRwU2xFcDhVdDlGZ0wwQWdxTnNsTmFLMzRLcStOWgpqTzlEQVFJREFRQUJBa0Fna3VMRUhMYXFrV2hMZ05LYWdTYWplb2JMUzNyUFQwQWdtMGY3azU1RlhWdDc0M2h3Ck5na3A5OGJNTnJ6eTlBUTFtSkdiUVpHcnByNGM4WkF4M2FSTkFpRUFveEsvTWdHZWVMdWkzODVLSjdaT1lrdGoKaExCTkFCNjlmS3dUWkZzVU5oMENJUUVKUVJwRkNjeWR1bnYyYkVOY04vb0JUUnczOUU4R052MnBJY054WmtjYgpOUUlnYllTem4zUHk2QWFzTmo2bkV0Q2ZCK2kxcDNGMzVUSy84N0RsUFNybUFna0NJUURKTGhGb2oxZ2J3UmJICi9iRFJQcnRsUlVERHg0NHdIb0VoU0RSZHk3N2VpUUlnRTZ6L2s2SStDaE4xTEx0dHdYMGdhbElUeG1BWXJPQmgKQlZsNDMzdGdUVFE9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K";
-
+       // NB: This a fake base64 public key. It is just for the purpose of testing
         String publicKeyBase64 = "LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1FZ0NRUUNvOStCcE1SWVEvZEwzRFMyQ3lKeFJGK2o2Y3RiVDMvUXA4NCtLZUZobmlpN05UN2ZFTGlsS1VTbngKUzMwV0F2UUNDbzJ5VTFvcmZncXI0MW1NNzBNQkFnTUJBQUU9Ci0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K";
 
         TextRSAPrivateKey privateKeyBase64Object = new Base64TextRSAPrivateKey(privateKeyBase64);
