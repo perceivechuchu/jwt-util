@@ -12,10 +12,12 @@ import io.github.perceivechuchu.jwt.signing.model.plain.PlainTextRSAPublicKey;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.Instant;
 import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * @author Perceive Chuchu
@@ -53,14 +55,14 @@ class JWTSignerTests {
                 .withClaim("jti", UUID.randomUUID().toString())
                 .withExpiresAt(Instant.now().plusSeconds(300));
 
-        assertNotNull(JWTSigner.sign(privateKeyPlainObject, publicKeyPlainObject, jwtBuilder));
+        assertNotNull(JWTSigner.sign(jwtBuilder, privateKeyPlainObject, publicKeyPlainObject));
     }
 
     @Test
     void sign_ReturnSignedJWT_WhenAllBase64TextParametersAreValid() throws JWTSignerException {
         // NB: This a fake base64 private key. It is just for the purpose of testing
         String privateKeyBase64 = "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUJWQUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQVQ0d2dnRTZBZ0VBQWtFQXFQZmdhVEVXRVAzUzl3MHQKZ3NpY1VSZm8rbkxXMDkvMEtmT1BpbmhZWjRvdXpVKzN4QzRwU2xFcDhVdDlGZ0wwQWdxTnNsTmFLMzRLcStOWgpqTzlEQVFJREFRQUJBa0Fna3VMRUhMYXFrV2hMZ05LYWdTYWplb2JMUzNyUFQwQWdtMGY3azU1RlhWdDc0M2h3Ck5na3A5OGJNTnJ6eTlBUTFtSkdiUVpHcnByNGM4WkF4M2FSTkFpRUFveEsvTWdHZWVMdWkzODVLSjdaT1lrdGoKaExCTkFCNjlmS3dUWkZzVU5oMENJUUVKUVJwRkNjeWR1bnYyYkVOY04vb0JUUnczOUU4R052MnBJY054WmtjYgpOUUlnYllTem4zUHk2QWFzTmo2bkV0Q2ZCK2kxcDNGMzVUSy84N0RsUFNybUFna0NJUURKTGhGb2oxZ2J3UmJICi9iRFJQcnRsUlVERHg0NHdIb0VoU0RSZHk3N2VpUUlnRTZ6L2s2SStDaE4xTEx0dHdYMGdhbElUeG1BWXJPQmgKQlZsNDMzdGdUVFE9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K";
-       // NB: This a fake base64 public key. It is just for the purpose of testing
+        // NB: This a fake base64 public key. It is just for the purpose of testing
         String publicKeyBase64 = "LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1FZ0NRUUNvOStCcE1SWVEvZEwzRFMyQ3lKeFJGK2o2Y3RiVDMvUXA4NCtLZUZobmlpN05UN2ZFTGlsS1VTbngKUzMwV0F2UUNDbzJ5VTFvcmZncXI0MW1NNzBNQkFnTUJBQUU9Ci0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K";
 
         TextRSAPrivateKey privateKeyBase64Object = new Base64TextRSAPrivateKey(privateKeyBase64);
@@ -73,7 +75,7 @@ class JWTSignerTests {
                 .withClaim("jti", UUID.randomUUID().toString())
                 .withExpiresAt(Instant.now().plusSeconds(300));
 
-        assertNotNull(JWTSigner.sign(privateKeyBase64Object, publicKeyBase64Object, jwtBuilder));
+        assertNotNull(JWTSigner.sign(jwtBuilder, privateKeyBase64Object, publicKeyBase64Object));
     }
 
     @Test
@@ -92,7 +94,7 @@ class JWTSignerTests {
                 .withClaim("jti", UUID.randomUUID().toString())
                 .withExpiresAt(Instant.now().plusSeconds(300));
 
-        JWTSignerException jwtSignerException = assertThrows(JWTSignerException.class, () -> JWTSigner.sign(privateKeyBase64Object, publicKeyBase64Object, jwtBuilder));
+        JWTSignerException jwtSignerException = assertThrows(JWTSignerException.class, () -> JWTSigner.sign(jwtBuilder, privateKeyBase64Object, publicKeyBase64Object));
         assertNotNull(jwtSignerException);
     }
 
@@ -112,7 +114,7 @@ class JWTSignerTests {
                 .withClaim("jti", UUID.randomUUID().toString())
                 .withExpiresAt(Instant.now().plusSeconds(300));
 
-        JWTSignerException jwtSignerException = assertThrows(JWTSignerException.class, () -> JWTSigner.sign(privateKeyBase64Object, publicKeyBase64Object, jwtBuilder));
+        JWTSignerException jwtSignerException = assertThrows(JWTSignerException.class, () -> JWTSigner.sign(jwtBuilder, privateKeyBase64Object, publicKeyBase64Object));
         assertNotNull(jwtSignerException);
     }
 
