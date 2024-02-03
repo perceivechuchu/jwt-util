@@ -1,6 +1,5 @@
 package io.github.perceivechuchu.jwt.signing.model.plain;
 
-import io.github.perceivechuchu.jwt.signing.exception.JWTSignerException;
 import io.github.perceivechuchu.jwt.signing.model.TextRSAPrivateKey;
 
 /**

@@ -1,7 +1,7 @@
 package io.github.perceivechuchu.jwt.signing.model;
 
 /**
- * This interface is an interface for text RSAPublicKey
+ * This is an interface for text RSAPublicKey
  *
  * @author Perceive Chuchu
  * @since 1.0.0

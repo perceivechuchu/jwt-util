@@ -6,11 +6,10 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 /**
- * JWTSignerException is thrown JWT signing fails
- *
- * @since 1.0.0
+ * The exception that is thrown when the JWT signing fails
  *
  * @author Perceive Chuchu
+ * @since 1.0.0
  */
 @Data
 @Builder
@@ -19,14 +18,14 @@ import lombok.ToString;
 public class JWTSignerException extends Exception {
 
     /**
-     * the message that is returned when the exception is thrown
+     * The message that is returned when the exception is thrown
      *
      * @since 1.0.0
      */
     private final String message;
 
     /**
-     * the constructor that instantiates an instance of JWTSignerException
+     * The constructor that instantiates an instance of JWTSignerException
      *
      * @param message the message that is returned when the exception is thrown
      * @since 1.0.0
